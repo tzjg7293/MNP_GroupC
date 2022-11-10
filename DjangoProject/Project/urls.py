@@ -14,6 +14,7 @@ urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
     path("register/", views.register_request),
     path("admin/", admin.site.urls),
+    path("", views.home, name="home"),
     path("", include("cms.urls")),
 ]
 
