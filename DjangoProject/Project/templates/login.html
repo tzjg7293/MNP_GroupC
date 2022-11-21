@@ -27,6 +27,16 @@
                     Sign in
                 </button>
             </form>
+
+            {#Display registration success message if an account has been successfully created#}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
             <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
         </div>
     </div>
