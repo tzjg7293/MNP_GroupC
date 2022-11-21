@@ -226,7 +226,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': 3306,
         'OPTIONS': {
-            'read_default_file': 'D:/Test DjangoCMS/my.cnf',
+            'read_default_file': '/Users/sdny7293/Desktop/Sydney/Coding/Database/my.cnf',
         },
     }
 }
