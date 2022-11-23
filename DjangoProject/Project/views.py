@@ -13,7 +13,7 @@ def register_request(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful.")
-            return redirect("/login")
+            return redirect("/home")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="register.html", context={"register_form": form})
@@ -51,7 +51,8 @@ def logout_request(request):
     return render(request=request, template_name="home.html")
 
 
-# Working on it
 def org_page_request(request):
     if request.method == "GET":
-        org_id = OrgGroups.objects.get(user_id=request.user.id)
+        org_id = OrgGroups.objects.filter(user_id=request.user.id).first().group_id
+        organization_name = Organizations.objects.filter(id=org_id).first().name
+    return render(request=request, template_name="org_page.html", context={"Organization": organization_name})
