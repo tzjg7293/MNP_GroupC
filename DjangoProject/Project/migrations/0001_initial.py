@@ -20,19 +20,13 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
             ],
-            options={
-                'verbose_name_plural': 'Organizations',
-            },
         ),
         migrations.CreateModel(
             name='OrgGroups',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Project.organizations')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('groupId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Project.organizations')),
+                ('userId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
-            options={
-                'verbose_name_plural': 'OrgGroups',
-            },
         ),
     ]
