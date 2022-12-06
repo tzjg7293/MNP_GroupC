@@ -20,14 +20,6 @@
                     <div class="alert alert-{{ message.tags }}">{{ message }}</div>
                 {% endfor %}
             {% endif %}
-            {#        Old form code -- working #}
-            {#            <form method="POST">#}
-            {#                {% csrf_token %}#}
-            {#                {{ register_form|crispy }}#}
-            {#                <button class="w-25 btn btn-lg btn-primary" type="submit">Register</button>#}
-            {#            </form>#}
-
-            {#        New form code with styling#}
             <form method="POST">
                 {% csrf_token %}
                 <div class="form-floating">
