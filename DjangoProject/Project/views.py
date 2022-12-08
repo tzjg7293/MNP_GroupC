@@ -25,7 +25,7 @@ def register_request(request):
 def home_page_request(request):
     if request.user.is_authenticated:
         fullname = request.user.first_name + " " + request.user.last_name
-        return render(request=request, template_name="home_loggedin.html", context={"username": fullname})
+        return render(request=request, template_name="home_loggedin.html", context={"fullname": fullname})
     else:
         return render(request=request, template_name="home.html")
 
