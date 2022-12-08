@@ -108,7 +108,8 @@ div.center-flex {
     background: black;
     border-color: black;
     font-weight: bold;
-    margin-left: 12px;
+    margin-left: 16px;
+    width: auto;
 }
 
 .bold {
